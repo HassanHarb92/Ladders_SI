@@ -14,8 +14,17 @@ def read_xyz_file(xyz_file_path):
 
 import streamlit as st
 
+st.markdown("""
+<style>
+.custom-css-class {
+    /* CSS rules */
+}
+</style>
+""", unsafe_allow_html=True)
+
+
 # Set the page to wide mode
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 
 # Streamlit app starts here
 st.title('Shape-persistent molecules exhibit nanogap-independent conductance in single-molecule junctions')
@@ -47,7 +56,7 @@ if st.button('Visualize'):
 
     # Read the selected XYZ file
     xyz_content = read_xyz_file(full_path_to_file)
-    scale = 1.2
+    scale = 1
     width = int(640.0*scale)
     height = int(480.0*scale)
     
