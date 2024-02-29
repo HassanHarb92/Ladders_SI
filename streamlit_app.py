@@ -12,7 +12,9 @@ def read_xyz_file(xyz_file_path):
         return file.read()
 
 # Streamlit app starts here
-st.title('SI Visualizer for Ladder molecules paper')
+st.title('Shape-persistent molecules exhibit nanogap-independent conductance in single-molecule junctions')
+st.markdown('## SI Visualizer')
+
 st.markdown('[Click here to read the manuscript](https://doi.org/10.26434/chemrxiv-2023-29v0h)')
 
 
