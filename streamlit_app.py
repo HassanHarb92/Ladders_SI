@@ -11,12 +11,17 @@ def read_xyz_file(xyz_file_path):
     with open(xyz_file_path, 'r') as file:
         return file.read()
 
+
+import streamlit as st
+
+# Set the page to wide mode
+st.set_page_config(layout="wide")
+
 # Streamlit app starts here
 st.title('Shape-persistent molecules exhibit nanogap-independent conductance in single-molecule junctions')
-st.markdown('## SI Visualizer')
+st.markdown('## Supplementary Information Visualizer')
 
 st.markdown('[Click here to read the manuscript](https://doi.org/10.26434/chemrxiv-2023-29v0h)')
-
 
 # Directory containing the .xyz files
 xyz_files_directory = 'xyz_files'
@@ -27,6 +32,14 @@ xyz_files = list_xyz_files(xyz_files_directory)
 # Dropdown to select an XYZ file
 selected_file = st.selectbox('Select an XYZ file', xyz_files)
 
+# Style options as radio buttons
+style_options = {
+    'Stick': {'stick': {}},
+    'Ball and Stick': {'stick': {}, 'sphere': {'radius': 0.5}},
+    'Spacefill': {'sphere': {}}
+}
+selected_style = st.radio('Select visualization style', list(style_options.keys()))
+
 # Button to visualize the selected XYZ file
 if st.button('Visualize'):
     # Full path to the selected file
@@ -34,14 +47,17 @@ if st.button('Visualize'):
 
     # Read the selected XYZ file
     xyz_content = read_xyz_file(full_path_to_file)
-
-    # Visualize the molecule using py3Dmol
-    xyzview = py3Dmol.view(width=640, height=480)
-    xyzview.addModel(xyz_content, 'xyz')
-    xyzview.setStyle({'stick': {}})
-    xyzview.zoomTo()
+    scale = 1.2
+    width = int(640.0*scale)
+    height = int(480.0*scale)
     
+    # Visualize the molecule using py3Dmol
+    xyzview = py3Dmol.view(width=width, height=height)
+    xyzview.addModel(xyz_content, 'xyz')
+    xyzview.setStyle(style_options[selected_style])  # Use the selected style
+    xyzview.zoomTo()
+
     # Display the visualization in Streamlit
     xyzview.show()
-    st.components.v1.html(xyzview._make_html(), width=640, height=480, scrolling=False)
+    st.components.v1.html(xyzview._make_html(), width=width, height=height, scrolling=False)
 
