@@ -19,7 +19,7 @@ import streamlit as st
 
 # Streamlit app starts here
 st.title('Shape-persistent molecules exhibit nanogap-independent conductance in single-molecule junctions')
-st.markdown('Xiaolin Liu, Hao Yang, Hassan Harb, Rajarshi Samajdar, Toby J. Woods, Oliver, Lin, Qian Chen, Adolfo I. B. Romo, Joaquín Rodríguez-López, Rajeev S. Assary, Jeffrey S. Moore, Charles M. Schroeder')
+st.markdown('*Xiaolin Liu, Hao Yang, Hassan Harb, Rajarshi Samajdar, Toby J. Woods, Oliver, Lin, Qian Chen, Adolfo I. B. Romo, Joaquín Rodríguez-López, Rajeev S. Assary, Jeffrey S. Moore, Charles M. Schroeder*')
 st.markdown('## Supplementary Information Visualizer')
 
 st.markdown('[Click here to read the manuscript](https://doi.org/10.26434/chemrxiv-2023-29v0h)')
