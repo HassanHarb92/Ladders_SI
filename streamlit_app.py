@@ -22,7 +22,7 @@ st.title('Shape-persistent molecules exhibit nanogap-independent conductance in 
 st.markdown('*Xiaolin Liu, Hao Yang, Hassan Harb, Rajarshi Samajdar, Toby J. Woods, Oliver, Lin, Qian Chen, Adolfo I. B. Romo, Joaquín Rodríguez-López, Rajeev S. Assary, Jeffrey S. Moore, Charles M. Schroeder*')
 st.markdown('## Supplementary Information Visualizer')
 
-st.markdown('[Click here to read the manuscript](https://doi.org/10.26434/chemrxiv-2023-29v0h)')
+st.markdown('[Click here to read the manuscript](https://doi.org/10.1038/s41557-024-01619-5)')
 
 # Directory containing the .xyz files
 xyz_files_directory = 'xyz_files'
